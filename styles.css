@@ -2,3 +2,17 @@ body{
     background: rgb(233,111,165);
     background: radial-gradient(circle, rgba(233,111,165,1) 0%, rgba(178,58,227,1) 100%);
 }
+
+#ganaPierde {
+    display: none;
+    font-style: italic;
+}
+
+h1{
+    font-weight: bold;
+    font-style: italic;
+
+}
+img {
+    width: 300px;
+}

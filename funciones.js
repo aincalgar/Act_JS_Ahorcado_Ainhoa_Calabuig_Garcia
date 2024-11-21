@@ -14,7 +14,21 @@ function LeerArchivoPalabras(){
     })
 }
 
+function validarDatos(e){
+
+}
+
 function cambiarImagen(){
     const imgInicial = document.getElementById("imgInicial")
+    //ganaPierde.innerText = "..que tengo aquí colgado!"
+    //ganaPierde.style.color = "red"
+
+    /*} else {
+        ganaPierde.innerText = "...a quén has salvado!"
+        //ganaPierde.style.color = "green"
+    }*/
+}
+
+function crearMatriz(){
     
 }
