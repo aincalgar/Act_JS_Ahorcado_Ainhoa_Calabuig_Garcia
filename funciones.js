@@ -26,7 +26,8 @@ function validarDatos(e){
             icon: "error"
           });
     } else { //si es una letra
-
+        //correcto
+        
     }
 
 }
@@ -43,19 +44,31 @@ function cambiarImagen(){
     }*/
 }
 
-function palabraSecreta(){
-    /*let word
+function seleccionarPalabra(posicion){
+    return posicion[Math.floor(Math.random() * posicion.length)]
+}
+
+function palabraSecreta(word){
+    let word/*
     word = words[Math.floor(Math.random() * words.length)] + 0; //Random para obtener una palabra aleatoria desde el array
     //El 0 es el mínimo rango que puede retornar
     return word;
     */
-   for(let palabra of words){
+    //return word[Math.floor(Math.random()*words.length-1)]
+    posicion = words[Math.floor(Math.random() * words.length - 1)]
     
-   }
+   //posicion = words.match
+   
 }
 
-console.log(palabraSecreta());
+console.log(seleccionarPalabra(words))
+/*
+posicion = words.Math.floor(Math.random()*words.length-1)*/
 
-/*word = Math.floor(Math.random()*words.length-1)
-document
-*/
+function obtener_palabra(){
+
+}
+
+function marcar_letra(){
+    
+}
