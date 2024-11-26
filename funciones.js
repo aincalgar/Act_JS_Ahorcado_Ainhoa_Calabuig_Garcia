@@ -1,4 +1,5 @@
-let words
+let words = []
+let palabraSecreta = " "
 
 function LeerArchivoPalabras(){
     fetch("words.json")
@@ -7,7 +8,8 @@ function LeerArchivoPalabras(){
     })
     .then(function(respJSON){
         //console.log(respJSON);
-        words = respJSON
+        words = respJSON.words
+        iniciarJuego()
     })
     .catch(function(err){
         console.log(err);
@@ -17,19 +19,23 @@ function LeerArchivoPalabras(){
 /* SOLO 1 LETRA TANTO MAYUSCULA COMO MINUSCULA --> poner TRY-CATCH*/
 
 function validarDatos(e){
-    const palabraSecreta =document.getElementById("txtLetra")
+    const insertarLetra =document.getElementById("txtLetra")
+    const letra = insertarLetra.value.toUpperCase()
     //validaciones mediante RegEx
     if(!txtLetra.value.match(/[a-z]/)){ //si es diferente de una letra: ERROR
         Swal.fire({
             title: "Error!",
-            text: "Tienes que introducir una sola letra.",
+            text: "Tienes que introducir una letra.",
             icon: "error"
           });
-    } else { //si es una letra
-        //correcto
+        return;
+    } 
+}
+
+function verificarLetra(letra) {
+    if (palabraSecreta.includes(letra)){
         
     }
-
 }
 
 function cambiarImagen(){
