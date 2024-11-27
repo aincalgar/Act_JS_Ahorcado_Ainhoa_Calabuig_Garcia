@@ -3,7 +3,10 @@ let palabraSecreta /* words[Math.floor(Math.random() * words.length)];*/
 let letrasAcertadas = [];
 let letrasEquivocadas = []
 let intentosRestantes = 8
+const palabraOculta = document.getElementById("palabraSeparada")
+let palabraElegida
 
+let nodoBoton = document.querySelector('#boton')
 
 function LeerArchivoPalabras(){
     fetch('./words.json')
@@ -22,17 +25,21 @@ function LeerArchivoPalabras(){
     })
 }
 
+
 function seleccionarPalabra(){
     let aleatorio = Math.round(Math.random() * (words.length - 1)) //Se crea variable para guardar una posicion aleatoria del array
     palabraElegida = words[aleatorio] //Se asigna a una variable la posicion seleccionada del array para retornar el valor de la posicion aleatoria
     return palabraElegida
+    
 }
+
 
 function inicializarJuego(){
-     /*palabraSecreta = seleccionarPalabra(); //para obtener la palabra aleatoria*/
-     letrasAcertadas = Array(palabraSecreta.length).fill('_'); //para crear guiones para la palabra, fill sirve para modificar los elementos de un array de forma simple
-
+    //palabraSecreta = seleccionarPalabra(); //para obtener la palabra aleatoria*/
+    //letrasAcertadas = Array(palabraSecreta.length).fill('_'); //para crear guiones para la palabra, fill sirve para modificar los elementos de un array de forma simple
+    //nodoBoton.addEventListener('click', comprobarLetra)//llama la uncion comprobarLetra una vez el usuario hace click en el boton
 }
+
 
 /* SOLO 1 LETRA TANTO MAYUSCULA COMO MINUSCULA --> poner TRY-CATCH*/
 
@@ -53,7 +60,8 @@ function validarDatos(e){
     }
 }
 
-function verificarLetra(letra) {
+/*
+function comprobarLetra(letra) {
     if (palabraSecreta.includes(letra)){ //si la palabra incluye la letra
         for(let i=0; i<palabraSecreta.length; i++){
             if(palabraSecreta[i]===letra){ //si la letra esta en alguna posicion de la palabra se acumula en las letrasAcertadas
@@ -68,11 +76,51 @@ function verificarLetra(letra) {
             //no se que poner
         }
     }
+}*/
+
+function separarPalabra(){
+    for (let i=0; i < palabraElegida.length; i++){
+        palabraOculta += "_ "
+        
+    }
+    console.log(palabraOculta);
+    document.getElementById("palabraSeparada").innerText=palabraOculta
 }
 
-
-
-
+/*
+function comprobarPalabra(){
+    let palabraAdivinar = palabraElegida
+    for (let i=0; i<letrasElegidas.length; i++){
+        //si encuentro una letra en la palabra a adivinar
+        if(palabraAdivinar.indexOf(letra) >= 0){
+            palabraAdivinar = palabraAdivinar.replace(new RegExp(letra), '_')
+        }
+        console.log(palabraAdivinar);
+    }
+    //si no hay más letras para adivinar, el usuario ha ganado
+    if (palabraAdivinar.length == 0){
+        estaJugando = false
+    }
+}*/
+/*
+function elegirLetra(letra){
+    if(jugando == false){
+        return false
+    }
+    let adivinado = false //hasta que la letra se encuentre al menos una vez en la palabra
+    for (let i=0; i<palabraElegida.length; i++){
+        if(palabraElegida[i] == letra){
+            adivinado = true
+        }
+    }
+    letrasElegidas += letra //la letra elegida se añade a la lista de las palabras elegidas
+    if (adivinado == true){
+        comprobarPalabra()
+    } else {
+        document.getElementById
+    }
+}*/
+/*
 function cambiarImagen(){
     //const imgInicial = document.getElementById("imgInicial")
     const imgInicial = 8 - intentosRestantes +1
@@ -89,34 +137,7 @@ function cambiarImagen(){
     } else {
         ganaPierde.innerText = "...a quién has salvado!"
         //ganaPierde.style.color = "green"
-    }*/
-}
-
-
-/*
-function palabraSecreta(word){
-    
-    word = words[Math.floor(Math.random() * words.length)] + 0; //Random para obtener una palabra aleatoria desde el array
-    //El 0 es el mínimo rango que puede retornar
-    return word;
-    
-    //return word[Math.floor(Math.random()*words.length-1)]
-    let posicion = words[Math.floor(Math.random() * words.length - 1)]
-    
-   //posicion = words.match
-   
-}*/
-
-
-/*
-posicion = words.Math.floor(Math.random()*words.length-1)
-
-function obtener_palabra(){
-
-}
-
-function marcar_letra(){
-    
+    }
 }*/
 
 LeerArchivoPalabras();
