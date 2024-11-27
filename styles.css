@@ -16,3 +16,9 @@ h1{
 img {
     width: 300px;
 }
+
+.ahorcado{
+    background-image: url(images/Hangman-0.png);
+    width: 3000px;
+    background-color: blanchedalmond;
+}
